@@ -3,9 +3,9 @@ from agency_swarm.tools import FileSearch
 import openai
 import os
 from dotenv import load_dotenv
-
+#import logging
 load_dotenv()
-
+#logging.basicConfig(level=logging.INFO)
 class CustomerInquiryAgent(Agent):
     def __init__(self):
         # Get vector store ID from environment
@@ -25,5 +25,17 @@ class CustomerInquiryAgent(Agent):
                 }
             },
             temperature=0.3,
-            max_prompt_tokens=4000
+            max_prompt_tokens=15000
         ) 
+#        logging.info(f"CustomerInquiryAgent initialized with tools: {self.tools}")
+#    def _run_tool(self, tool_call, message_text):
+#        """
+#        This function is called when the agent needs to use a tool.
+#        """
+#        logging.info(f"Running tool: {tool_call.name} with arguments: {tool_call.arguments}")
+#        try:
+#            return super()._run_tool(tool_call, message_text)
+#        except Exception as e:
+#            logging.error(f"Error running tool {tool_call.name}: {e}")
+#            raise e
+#

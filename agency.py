@@ -23,7 +23,7 @@ agency = Agency(
     ],
     shared_instructions="agency_manifesto.md",
     temperature=0.3,
-    max_prompt_tokens=4000
+    max_prompt_tokens=15000
 )
 
 if __name__ == "__main__":
